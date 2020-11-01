@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Search</title>
+		<style>
+			table {
+				font-family: arial, sans-serif;
+				width: 100%;
+				text-align: center;
+			}
+			input[type=text], select {
+  				width: 100%;
+  				padding: 12px 20px;
+  				margin: 8px 0;
+  				display: inline-block;
+  				border: 1px solid #ccc;
+  				border-radius: 4px;
+  				box-sizing: border-box;
+  				font-size: 120%;
+			}
+
+			input[type=submit] {
+  				width: 100%;
+  				background-color: #4CAF50;
+  				color: white;
+  				padding: 14px 20px;
+  				margin: 8px 0;
+  				border: none;
+ 	 			border-radius: 4px;
+  				cursor: pointer;
+			}
+
+			input[type=submit]:hover {
+  				background-color: #45a049;
+			}
+			select {
+				background-color: #ffffff;
+				font-family: arial, sans-serif;
+				/*font-size: 150%;*/
+			}
+			option {
+				background-color: #ffffff;
+				font-family: arial, sans-serif;
+				text-align: left;
+				font-size: 150%
+			}
+			label {
+				font-family: arial, sans-serif;
+				text-align: center;
+				font-size: 120%
+			}
+		</style>
+	</head>
+	<body>
+		<h1 style='color:red'>Search Here</h1>
+		<form acion="search/" method="POST">
+			{% csrf_token %}
+			<div>
+				<table>
+					<tr>
+						<th colspan='4'>
+							<input type='text' name="value" id="value">
+						</th>
+						<th>
+							<!--<button type='button'>Search</button>	-->
+							<input type='submit' value='Search'>
+						</th>
+					</tr>
+					<tr>
+						<th>
+							<label>Search for Staff</label>
+						</th>
+						<th>
+							<label>Entity</label>
+							<select name='Entity Name' id='Entity name'>
+								<!--<div class='dropdown-content'>-->
+								<option value= '--' >--Select--</option>
+								<option value='Doctor'>Doctor</option>
+								<option value='Nurse'>Nurse</option>
+								<option value='Employee'>Employee</option>
+							<!--</div>-->
+							</select>					
+						</th>
+						<th>
+							<label>Attribute</label>
+							<select name='Attribute' id='Attribute'>
+							<!--	<option value='RID'>Record ID</option>	-->
+								<option value= '--' >--Select--</option>
+								<option value='ID'>ID</option>
+								<option value='Staff Name'>Name</option>
+								<option value='Staff Email'>Email</option>
+							</select>
+						</th>
+
+					</tr>
+					<tr>
+						<th>
+							<label>Search Patient</label>
+						</th>
+						<th>
+							<label>Patient</label>
+							<select name='Patient' id='Patient'>
+								<option value= '--' >--Select--</option>
+								<option value='PID'>PID</option>
+								<option value='Patient Name'>Name</option>
+								<option value='Record no'>Record no</option>
+								<option value="Patient room">Room no</option>
+							</select>
+						</th>
+					</tr>
+					<tr>
+						<th>
+							<label>Search Room</label>
+						</th>
+						<th>
+							<lable>Room</label>
+							<select name='room' id='room'>
+								<option value= '--' >--Select--</option>
+								<option value='roomnum'>Room Number</option>
+								<option value='avail'>Available</option>
+								<option value='navail'>Not Available</option>
+							</select>
+						</th>
+					</tr>
+					<tr>
+						<th>
+							<label>Search Receptionist</label>
+						</th>
+						<th>
+							<lable>Room</label>
+							<select name='Receptionist' id='Receptionist'>
+								<option value= '--' >--Select--</option>
+								<option value='R_ID'>ID</option>
+								<option value='RNO'>Record no</option>
+							</select>
+						</th>
+					</tr>
+
+				</table>
+			</div>
+		</form>
+	</body>
+</html>
+

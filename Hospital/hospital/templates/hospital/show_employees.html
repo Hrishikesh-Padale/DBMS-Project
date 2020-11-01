@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+table, td, th {  
+  border: 1px solid black;
+  text-align: center;
+}
+
+.button1 {
+  position: relative;
+  background-color: #4CAF50;
+  border: none;
+  font-size: 28px;
+  color: #FFFFFF;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button2 {
+  position: relative;
+  background-color: red;
+  border: none;
+  font-size: 28px;
+  color:  #FFFFFF;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button1:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button2:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button1:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+.button2:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr:hover {background-color:powderblue;}
+
+th, td {
+  padding: 15px;
+}
+</style>
+<body>
+<h1>THIS IS A SHOW EMPLOYEES PAGE</h1>
+<div style="overflow-x:auto;">
+<table>
+<tr>
+	<th><h2>EMPLOYEE ID</h2></th>
+	<th><h2>NURSE ID</h2></th>
+	<th><h2>NAME</h2></th>
+	<th><h2>EMAIL</h2></th>
+	<th><h2>SALARY</h2></th>
+  <th><h2>ACTION</h2></th>
+</tr>
+{% for i in employees %}
+<tr>
+{% for j in i %}
+<td><h2>{{j}}</h2></td>
+{% endfor %}
+<td  style="width:25%;"><button onclick="window.location.href='';" class="button1">APPOINT</button> <button onclick="window.location.href='remove/{{i.1}}';" class="button2">REMOVE</button></td>
+<!--<td><h2>{{i.0}}</h2></td>-->
+</tr>
+{% endfor %}
+</table>
+</div>
+</body>
+</html>
