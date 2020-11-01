@@ -1,0 +1,5 @@
+-Run ./requirements command
+-Navigate to Hospital/
+-Run python3 manage runserver
+-Open browser and navigate to the url 127.0.0.1:8000
+
