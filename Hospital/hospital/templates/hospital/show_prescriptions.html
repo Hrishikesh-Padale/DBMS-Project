@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+table, td, th {  
+  border: 3px solid black;
+  text-align: center;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr:hover {background-color:powderblue;}
+
+th, td {
+  padding: 15px;
+}
+</style>
+
+<h1 style="font-size:50px;text-align: center;color:red;">Prescriptions</h1>
+
+
+<table>
+	<tr>
+		<th><h1 style="font-size:30px">Attribute</h1></th>
+		<th><h1 style="font-size:30px">Value</h1></th>
+	</tr>
+	<tr>
+		<td>	
+			<h1 style="font-size:30px">PID</h1>
+		</td>
+		<td>
+			<h1 style="font-size:30px">{{bill.0}}</h1>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<h1 style="font-size:30px">Treatments</h1>	
+		</td>
+		<td>
+			<h1 style="font-size:30px">{{bill.1}}</h1>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<h1 style="font-size:30px">Medicines</h1>	
+		</td>
+		<td>
+			<h1 style="font-size:30px">{{bill.3}}</h1>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<h1 style="font-size:30px">Total Amount</h1>	
+		</td>
+		<td>
+			<h1 style="font-size:30px">{{bill.2}}/-</h1>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<h1 style="font-size:30px">Room ID</h1>	
+		</td>
+		<td>
+			<h1 style="font-size:30px">{{bill.4}}</h1>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<h1 style="font-size:30px">Room Type</h1>	
+		</td>
+		<td>
+			<h1 style="font-size:30px">{{bill.5}}</h1>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<h1 style="font-size:30px">Period</h1>	
+		</td>
+		<td>
+			<h1 style="font-size:30px">{{bill.6}}</h1>
+		</td>
+	</tr>
+
+
+</table>
+</body>
+</html>

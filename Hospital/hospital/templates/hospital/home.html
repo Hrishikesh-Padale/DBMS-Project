@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.image{
+	position:absolute;
+	border-radius:20%;
+}
+
+</style>
+</head>
+<body style="background-image:url('{% static 'images/BG' %}');background-size:cover;">
+	<h1 style="font-family:verdana;font-size:50px;color:red;text-align:center;"><u>HOSPITAL MANAGEMENT SYSTEM</u></h1>
+	<a href="hospital/doctor_login/"><img src="{% static 'images/doctor.jpeg' %}" alt="Doctor" width="300px" height="300px" border="5px solid blue;" class="image" style="top:35%; left:20%;"></a>	
+	<a href="hospital/patient_login/"><img src="{% static 'images/patient.jpeg' %}" alt="Patient" width="300px" height="300px" border="5px solid blue;" class="image" style="top:35%; left:40%;"></a>
+	<a href="hospital/staff/"><img src="{% static 'images/staff.png' %}" alt="Staff" width="300px" height="300px" border="5px solid blue;" class="image" style="top:35%; left:60%;"></a>
+</body>
+</html>

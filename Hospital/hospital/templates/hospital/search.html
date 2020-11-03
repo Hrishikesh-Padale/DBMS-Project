@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<style>
+			body {
+				background-image: url('background.jpg');
+			}
+			table {
+				font-family: arial, sans-serif;
+				width: 100%;
+				text-align: center;
+			}
+			input[type=text], select {
+  				width: 100%;
+  				padding: 12px 20px;
+  				margin: 8px 0;
+  				display: inline-block;
+  				border: 1px solid #ccc;
+  				border-radius: 4px;
+  				box-sizing: border-box;
+  				font-size: 120%;
+			}
+
+			input[type=submit] {
+  				width: 100%;
+  				background-color: #4CAF50;
+  				color: white;
+  				padding: 14px 20px;
+  				margin: 8px 0;
+  				border: none;
+ 	 			border-radius: 4px;
+  				cursor: pointer;
+			}
+
+			input[type=submit]:hover {
+  				background-color: #45a049;
+			}
+			select {
+				background-color: #ffffff;
+				font-family: arial, sans-serif;
+				/*font-size: 150%;*/
+			}
+			option {
+				background-color: #ffffff;
+				font-family: arial, sans-serif;
+				text-align: left;
+				font-size: 150%
+			}
+			label {
+				font-family: arial, sans-serif;
+				text-align: center;
+				font-size: 120%
+			}
+		</style>
+	
+	</head>
+	<body>
+	<script>
+		$(document).ready(function () {
+			$("#type").change(function () {
+				var val = $(this).val();
+				if(val == "Doctor"){
+					$("#size").html("<option value='type'>Type</option><option value='name'>Doctor Name</option><option value='NID'>Doctors Id</option><option value='attends'>Attends</option>");
+				}else if (val == "Employee") {
+					$("#size").html("<option value='EID'>Employee Id</option><option value='name'>Employee Name</option><option value='email'>Email</option>");
+				} else if (val == "Nurse") {
+					$("#size").html("<option value='NID'>Nurse Id</option><option value='governs'>Governs Room</option><option value='email'>Email</option>");
+				}else if (val == "Patient") {
+					$("#size").html("<option value='PID'>Patient Id</option><option value='pName'>Patient Name</option><option value='recordno'>Record Number</option>");
+				} else if(val == "Treatment"){
+					$("#size").html("<option value='treatname'>Treatment Name</option>");
+				} else if(val == "Medicine"){
+					$("#size").html("<option value='code'>Code</option>");
+				} else if(val == "Receptionist"){
+					$("#size").html("<option value='name'>Name</option><option value='recepid'>Receptionist Id</option><option value='recordno'>Record Number</option>");
+				} else if(val == "Room"){
+					$("#size").html("<option value='room_id'>Room Id</option><option value='roomtype'>Room Type</option>");
+				} else if(val == "item0") {
+					$("#size").html("<option value=''>--select--</option>");
+				}
+			});
+		
+		});
+	</script>
+	<form action="" method="POST">
+		{% csrf_token %}
+		<h1 style='color:red; text-align: center;'>Search Here</h1>
+		<hr style='color:blue' width='75%' height='5px' />
+		<input type='text' name="key" placeholder='Search ...'>
+		<!--<input type='submit' value='Search'> -->
+		<select name="entity" id="type"> 
+			<option value="item0">--select--</option>
+			<option value="Doctor">Doctor</option>
+			<option value="Employee">Employee</option>
+			<option value="Room">Room</option>
+			<option value="Patient">Patient</option>
+			<option value="Nurse">Nurse</option>
+			<option value="Medicine">Medicine</option>
+			<option value='Receptionist'>Receptionist</option>
+			<option value="Treatment">Treatment</option>
+		</select>
+		<select name="attribute" id="size">
+			<option value=''>--select one--</option>
+		</select>
+		
+		<input type='submit' value='Search'>
+	</form>
+	<hr>
+	<h1 style="font-size:40px;text-align: center;color: green;">Search Results</h1>
+	<h1 style="font-size:25px;text-align: center;color: black;">{{result}}</h1>
+</body>
+</html>
