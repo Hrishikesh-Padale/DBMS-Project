@@ -1,3 +1,31 @@
+Project Name:Hospital Management System
+
+Members:
+  1) Hrishikesh Padale - 111803164
+  2) Akash Malavekar - 111803171
+
+Languages used:
+  Front end-
+    HTML,CSS,JS
+  Backend - 
+    Django-python framework
+ 
+About project:
+  -A simple Hospital management system with 3 sections as Patient,Doctor,Admin Page
+  -Patients,doctor,Employees,Receptionists can sign up and handle their accounts
+  -Patient can take appointment of desired doctor 
+  -Doctor can attend a patient,give prescription,assign a room,admit,discharge
+  -Receptionists maintain the patient records
+  -Every nurse governs a room
+  -A section where whole databse of the hospital can be seen by admin
+  -Admin can check appointments of doctors,can remove any staff from whole database permanently
+  -Queries can be performed with number of filters from databse
+
+ER-Diagram:
+  -in screenshots/ (in this repository)
+
+Installation:
+-download whole code and extract
 -Run ./requirements command
 -Navigate to Hospital/
 -Run python3 manage runserver
